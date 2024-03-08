@@ -8,7 +8,7 @@ import turnstilePlugin from "@cloudflare/pages-plugin-turnstile";
 // your secret key(s) safely. 
 
 export const onRequestPost = [
-	  (async (context) => const SECRET_KEY = context.env.SECRET_KEY),
+	  (async (context) => {const SECRET_KEY = context.env.SECRET_KEY}),
     turnstilePlugin({
     	secret: SECRET_KEY,
     }),
