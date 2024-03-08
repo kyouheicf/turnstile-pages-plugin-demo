@@ -12,11 +12,8 @@ export const onRequestPost = [
 			const SECRET_KEY = context.env.SECRET_KEY
 			console.log(SECRET_KEY)
 			//turnstilePlugin({secret: SECRET_KEY}),
-			return context.next();
+			return turnstilePlugin({secret: SECRET_KEY});
 		}),
-    turnstilePlugin({
-      secret: SECRET_KEY,
-    }),
     (async (context) => {
     	// Request has been validated as coming from a human
     	const formData = await context.request.formData()
