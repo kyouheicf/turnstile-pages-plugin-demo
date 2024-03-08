@@ -13,7 +13,7 @@ export const onRequestPost = [
 			console.log(SECRET_KEY)
 			//turnstilePlugin({secret: SECRET_KEY}),
 			turnstilePlugin({secret: SECRET_KEY});
-			context.data.turnstile
+			console.log(context.data.turnstile)
 		}),
     (async (context) => {
     	// Request has been validated as coming from a human
