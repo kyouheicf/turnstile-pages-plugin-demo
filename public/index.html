@@ -9,6 +9,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" type="image/png" href="https://www.cloudflare.com/favicon-128.png">
 		<link rel="stylesheet" href="/index.css">
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=_turnstileCb" defer></script>
 	</head>
 	<body>
 
@@ -65,10 +66,21 @@
 						</li>
 					</ul>
 				</div>
-
+				<div id="turnstile-widget" style="padding-top: 20px;"></div>
 				<button type="submit">Submit</button>
 			</form>
 		</main>
+	<script>
+	// This function is called when the Turnstile script is loaded and ready to be used.
+	// The function name matches the "onload=..." parameter.
+	function _turnstileCb() {
+	    console.debug('_turnstileCb called');
 
+	    turnstile.render('#turnstile-widget', {
+	      sitekey: '0x4AAAAAAAUOkj5Va1Csa4wK',
+	      theme: 'light',
+	    });
+	}
+	</script>
 	</body>
 </html>
