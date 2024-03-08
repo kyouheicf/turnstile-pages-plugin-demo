@@ -4,13 +4,9 @@
 
 import turnstilePlugin from "@cloudflare/pages-plugin-turnstile";
 
-// This is a demo secret key. In prod, we recommend you store
-// your secret key(s) safely. 
-const SECRET_KEY = env.SECRET_KEY;
-
 export const onRequestPost = [
     turnstilePlugin({
-    	secret: SECRET_KEY,
+    	secret: context.env.SECRET_KEY,
     }),
     (async (context) => {
     	// Request has been validated as coming from a human
