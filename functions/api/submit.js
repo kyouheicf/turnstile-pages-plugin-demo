@@ -13,6 +13,9 @@ export const onRequestPost = [
 			console.log(SECRET_KEY)
 			//turnstilePlugin({secret: SECRET_KEY}),
 		}),
+    turnstilePlugin({
+      secret: SECRET_KEY,
+    }),
     (async (context) => {
     	// Request has been validated as coming from a human
     	const formData = await context.request.formData()
