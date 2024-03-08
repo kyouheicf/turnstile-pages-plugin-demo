@@ -9,11 +9,9 @@ import turnstilePlugin from "@cloudflare/pages-plugin-turnstile";
 
 export const onRequestPost = [
 	  (async (context) => {
-			const SECRET_KEY = await context.env.SECRET_KEY
+			const SECRET_KEY = context.env.SECRET_KEY
 			console.log(SECRET_KEY)
-			turnstilePlugin({
-    	  secret: SECRET_KEY,
-      }),
+			//turnstilePlugin({secret: SECRET_KEY}),
 		}),
     (async (context) => {
     	// Request has been validated as coming from a human
