@@ -11,7 +11,7 @@ export const onRequestPost = [
 	  (async (context) => {
 			const SECRET_KEY = context.env.SECRET_KEY
 			console.log(SECRET_KEY)
-			//turnstilePlugin({secret: SECRET_KEY}),
+		} => {
 			turnstilePlugin({secret: SECRET_KEY});
 			console.log(context.data.turnstile)
 		}),
