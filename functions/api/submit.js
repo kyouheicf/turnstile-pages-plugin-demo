@@ -9,7 +9,7 @@ import turnstilePlugin from "@cloudflare/pages-plugin-turnstile";
 
 export const onRequestPost = [
 	  (async (context) => {
-			context.params.secret = context.env.SECRET_KEY
+			context.pluginArgs.secret = context.env.SECRET_KEY
 			return context.next(); 
 		}),
 		turnstilePlugin(),
