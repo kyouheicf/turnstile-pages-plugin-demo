@@ -8,11 +8,9 @@ import turnstilePlugin from "@cloudflare/pages-plugin-turnstile";
 // your secret key(s) safely. 
 
 export const onRequestPost = [
-	  (async (context) => {
-			context.data.secret = context.env.SECRET_KEY
-			return context.next(); 
-		}),
-		turnstilePlugin(),
+	  ((context) => {
+      return turnstilePlugin({secret: context.env.SECRET_KEY})(context);
+    };),
     (async (context) => {
     	// Request has been validated as coming from a human
     	const formData = await context.request.formData()
